@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe4ef">
+  <meta name="description" content="A little apology website made for Nann.">
+  <title>Nann Apology 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="anger-header">
+    <div class="anger-row">
+      <span>💢 Nann's Anger</span>
+      <strong id="angerText">60%</strong>
+    </div>
+
+    <div
+      class="meter"
+      role="progressbar"
+      aria-label="Anger meter"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="60"
+      id="angerMeter"
+    >
+      <div id="angerFill" class="meter-fill"></div>
+    </div>
+
+    <p id="angerMessage" aria-live="polite">
+      Let's take it one tap at a time 💗
+    </p>
+  </header>
+
+  <main>
+    <!-- Welcome and Level Selection -->
+    <section id="welcomeScreen" class="screen active">
+      <div class="card welcome-card">
+        <div class="heart">💗</div>
+
+        <p class="eyebrow">A little something for you</p>
+        <h1>I'm Sorry, Nann!</h1>
+
+        <p class="description">
+          I know you're upset with me.
+          I made this little website just for you.
+          Will you give me a chance? 🥺
+        </p>
+
+        <h2 class="small-heading">Choose Anger Level</h2>
+
+        <div class="level-list">
+          <button
+            class="level-option"
+            data-level="1"
+            type="button"
+            aria-pressed="false"
+          >
+            <span class="level-emoji">🌷</span>
+            <span class="level-info">
+              <strong>Anger Level 1</strong>
+              <small>A little angry · Starts at 30%</small>
+            </span>
+            <span class="level-check">○</span>
+          </button>
+
+          <button
+            class="level-option selected"
+            data-level="2"
+            type="button"
+            aria-pressed="true"
+          >
+            <span class="level-emoji">💗</span>
+            <span class="level-info">
+              <strong>Anger Level 2</strong>
+              <small>Quite angry · Starts at 60%</small>
+            </span>
+            <span class="level-check">✓</span>
+          </button>
+
+          <button
+            class="level-option"
+            data-level="3"
+            type="button"
+            aria-pressed="false"
+          >
+            <span class="level-emoji">🌋</span>
+            <span class="level-info">
+              <strong>Anger Level 3</strong>
+              <small>Very angry · Starts at 90%</small>
+            </span>
+            <span class="level-check">○</span>
+          </button>
+        </div>
+
+        <button id="startButton" class="primary-button" type="button">
+          Let's Begin 💕
+        </button>
+      </div>
+    </section>
+
+    <!-- Cartoon Tap Game -->
+    <section id="punchScreen" class="screen">
+      <div class="card">
+        <p class="eyebrow">Step 1 · Cartoon Mode</p>
+        <h1>Tap My Face 😵‍💫</h1>
+
+        <p class="description">
+          Tap the cartoon directly.
+          Every tap reduces the anger meter by exactly 1%.
+        </p>
+
+        <div class="character-wrap">
+          <div id="characterStage" class="character-stage">
+            <span class="sparkle sparkle-one" aria-hidden="true">✦</span>
+            <span class="sparkle sparkle-two" aria-hidden="true">♡</span>
+
+            <img
+              id="cartoon"
+              src="HHK.png"
+              alt="My cartoon portrait. Tap to play."
+              draggable="false"
+              tabindex="0"
+            >
+
+            <span id="bumpOne" class="bump bump-one" aria-hidden="true">💢</span>
+            <span id="bumpTwo" class="bump bump-two" aria-hidden="true">🟣</span>
+            <span id="bumpThree" class="bump bump-three" aria-hidden="true">💢</span>
+
+            <span id="impact" class="impact" aria-hidden="true">BOOP!</span>
+          </div>
+        </div>
+
+        <p id="tapCount" class="tap-count">Tap count: 0</p>
+
+        <p id="punchMessage" class="status-text" aria-live="polite">
+          Tap my face! It's only a cartoon 😅
+        </p>
+
+        <div class="action-row">
+          <button id="resetTapButton" class="secondary-button" type="button">
+            Reset ↻
+          </button>
+
+          <button id="finishButton" class="primary-button" type="button">
+            I'm Sorry 💗
+          </button>
+        </div>
+
+        <button class="text-button" data-go="welcomeScreen" type="button">
+          ← Change Level
+        </button>
+      </div>
+    </section>
+
+    <!-- Final Apology -->
+    <section id="finishScreen" class="screen">
+      <div class="card finish-card">
+        <div class="heart">💖</div>
+
+        <p class="eyebrow">Made with love</p>
+        <h1>I'm Really Sorry</h1>
+
+        <p class="description">
+          I may not always get things right, but I want to listen
+          and make things better.
+          You don't have to forgive me right away.
+        </p>
+
+        <div class="summary">
+          <p>
+            🎚️ Your level:
+            <strong id="finalLevel">Anger Level 2</strong>
+          </p>
+          <p>
+            💗 Anger remaining:
+            <strong id="finalAnger">60%</strong>
+          </p>
+          <p>
+            👆 Total taps:
+            <strong id="finalTaps">0</strong>
+          </p>
+        </div>
+
+        <p id="finalMessage" class="final-message">
+          I hope we can talk when you're ready. 💗
+        </p>
+
+        <button id="restartButton" class="primary-button" type="button">
+          Start Again 🌷
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with a little pink love 💗</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
